@@ -13,9 +13,9 @@ contract Token is ERC20, AccessControl {
 
     constructor(string memory name, string memory symbol, uint256 initialSupply) ERC20(name, symbol) {
         _owner = msg.sender;
-        grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        grantRole(MINTER_ROLE, msg.sender);
-        grantRole(BURNER_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(MINTER_ROLE, msg.sender);
+        _grantRole(BURNER_ROLE, msg.sender);
         _mint(msg.sender, initialSupply);
     }
 
@@ -31,5 +31,25 @@ contract Token is ERC20, AccessControl {
     function burn(address from, uint256 amount) public {
         require(hasRole(BURNER_ROLE, msg.sender), "Token: must have burner role to burn");
         _burn(from, amount);
+    }
+
+    function grantMinterRole(address account) public {
+        require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "Token: must have admin role to grant minter role");
+        _grantRole(MINTER_ROLE, account);
+    }
+
+    function revokeMinterRole(address account) public {
+        require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "Token: must have admin role to revoke minter role");
+        _revokeRole(MINTER_ROLE, account);
+    }
+
+    function grantBurnerRole(address account) public {
+        require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "Token: must have admin role to grant burner role");
+        _grantRole(BURNER_ROLE, account);
+    }
+
+    function revokeBurnerRole(address account) public {
+        require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "Token: must have admin role to revoke burner role");
+        _revokeRole(BURNER_ROLE, account);
     }
 }
