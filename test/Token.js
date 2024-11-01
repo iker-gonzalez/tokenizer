@@ -7,14 +7,15 @@ describe("Token contract", function () {
   let owner;
   let addr1;
   let addr2;
-  let totalSupply = 1000000;
+  let totalSupply = 1000000n; // Using BigInt for large numbers
 
   beforeEach(async function () {
+    // Get the ContractFactory and Signers here.
     Token = await ethers.getContractFactory("Token");
-    [owner, addr1, addr2, _] = await ethers.getSigners();
+    [owner, addr1, addr2] = await ethers.getSigners();
 
     token = await Token.deploy("Galaxy", "42GX", totalSupply);
-    await token.deployed();
+    await token.deployed(); // Wait until the contract is deployed
   });
 
   describe("Deployment", function () {
@@ -38,14 +39,14 @@ describe("Token contract", function () {
     it("Should transfer tokens between accounts", async function () {
       await token.transfer(addr1.address, 50);
       const addr1Balance = await token.balanceOf(addr1.address);
-      expect(addr1Balance).to.equal(50);
+      expect(addr1Balance).to.equal(50n);
 
       await token.connect(addr1).transfer(addr2.address, 50);
       const addr2Balance = await token.balanceOf(addr2.address);
-      expect(addr2Balance).to.equal(50);
+      expect(addr2Balance).to.equal(50n);
     });
 
-    it("Should fail if sender doesn’t have enough tokens", async function () {
+    it("Should fail if sender doesn't have enough tokens", async function () {
       const initialOwnerBalance = await token.balanceOf(owner.address);
 
       await expect(
@@ -62,13 +63,13 @@ describe("Token contract", function () {
       await token.transfer(addr2.address, 50);
 
       const finalOwnerBalance = await token.balanceOf(owner.address);
-      expect(finalOwnerBalance).to.equal(initialOwnerBalance - 150);
+      expect(finalOwnerBalance).to.equal(initialOwnerBalance - 150n);
 
       const addr1Balance = await token.balanceOf(addr1.address);
-      expect(addr1Balance).to.equal(100);
+      expect(addr1Balance).to.equal(100n);
 
       const addr2Balance = await token.balanceOf(addr2.address);
-      expect(addr2Balance).to.equal(50);
+      expect(addr2Balance).to.equal(50n);
     });
   });
 });
