@@ -26,3 +26,7 @@ Tokenizer is a hands-on project where you'll create and deploy a custom blockcha
 
 ## How the Token Works and How to Use It
 The token is an ERC-20 compliant token on the Ethereum blockchain. It can be used for various purposes such as transferring value, accessing services, or participating in decentralized applications (dApps). Users can interact with the token using Ethereum wallets like MetaMask, and view transactions on Etherscan.
+
+## Contract Verification on Etherscan
+After deploying the contract, you can verify it on Etherscan using the following link:
+- [Etherscan Contract Verification](https://etherscan.io/)
