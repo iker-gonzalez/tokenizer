@@ -1,5 +1,5 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
 module.exports = {
   contracts_directory: './code/contracts', // Specify the custom contracts directory
@@ -39,7 +39,7 @@ module.exports = {
   },
   compilers: {
     solc: {
-      version: "0.8.0",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.20",    // Fetch exact version from solc-bin (default: truffle's version)
     }
   },
   plugins: [

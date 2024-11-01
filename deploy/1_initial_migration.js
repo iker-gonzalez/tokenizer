@@ -6,12 +6,4 @@ module.exports = async function (deployer, network, accounts) {
   const initialSupply = 1000000;
 
   await deployer.deploy(Token, name, symbol, initialSupply);
-  const tokenInstance = await Token.deployed();
-
-  if (network === 'mainnet' || network === 'sepolia') {
-    await run("verify:verify", {
-      address: tokenInstance.address,
-      constructorArguments: [name, symbol, initialSupply],
-    });
-  }
 };
