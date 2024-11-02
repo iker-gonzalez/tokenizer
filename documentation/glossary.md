@@ -48,3 +48,4 @@
 | **ABI (Application Binary Interface)** | A standard way for interacting with smart contracts in the Ethereum ecosystem, defining how data should be encoded and decoded. |
 | **ERC-721**        | A standard for non-fungible tokens (NFTs) on the Ethereum blockchain, allowing for the creation of unique digital assets. |
 | **Metamask**       | A browser extension and mobile app that allows users to interact with the Ethereum blockchain, manage their wallets, and sign transactions. |
+| **Faucet**         | A service that provides free tokens or cryptocurrency, typically for use on a testnet, to help developers and users test applications without using real funds. |
