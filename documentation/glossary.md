@@ -33,6 +33,15 @@
 | **Public Key**     | A key that is shared publicly and used to receive transactions.                                      |
 | **dApp (Decentralized Application)** | An application that runs on a decentralized network, such as Ethereum, rather than a centralized server. |
 
+## Node
+
+| Type          | Description                                                                                                           |
+|---------------|-----------------------------------------------------------------------------------------------------------------------|
+| **Infura**    | A service that provides scalable and reliable access to Ethereum and IPFS networks. It offers APIs to interact with Ethereum nodes without the need to run your own node. |
+| **Full Nodes**| Store the entire history of the Ethereum blockchain. They validate all transactions and smart contracts and provide data to other nodes and clients. |
+| **Light Nodes**| Store only the header of each block. They rely on full nodes for transaction and contract data, using less storage and bandwidth. |
+| **Archive Nodes**| Store everything that full nodes store, plus the historical state of all smart contracts. They are used for querying historical blockchain data. |
+
 ## Ethereum Platform
 
 | Term               | Definition                                                                                           |
