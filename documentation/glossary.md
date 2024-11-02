@@ -18,6 +18,8 @@
 | **Smart Contract** | Self-executing contracts with the terms of the agreement directly written into code. They automatically enforce and execute the terms. |
 | **Decentralized**  | A system where control is distributed across multiple points rather than being centralized in a single entity. |
 | **Consensus Mechanism** | A protocol used by blockchain networks to achieve agreement on a single data value or state of the network, such as Proof of Work (PoW) or Proof of Stake (PoS). |
+| **Proof of Work (PoW)** | A consensus mechanism where miners solve complex mathematical problems to validate transactions and create new blocks. |
+| **Proof of Stake (PoS)** | A consensus mechanism where validators are chosen to create new blocks based on the number of tokens they hold and are willing to "stake" as collateral. |
 | **Node**           | A computer that participates in the blockchain network by maintaining a copy of the blockchain and validating transactions. |
 | **Hash**           | A function that converts an input (or 'message') into a fixed-length string of bytes. Hashes are used in blockchain to ensure data integrity. |
 | **Block**          | A collection of transactions that are bundled together and added to the blockchain.                  |
