@@ -24,3 +24,6 @@ Tokenizer is a hands-on project where you'll create and deploy a custom blockcha
 - **Ethers.js**: Library for interacting with the Ethereum blockchain.
 - **Node.js and npm**: JavaScript runtime and package manager.
 - **Etherscan**: Blockchain explorer for contract verification and interaction.
+
+## Useful Links
+- [Proof of Stake FAQs](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/faqs/)
