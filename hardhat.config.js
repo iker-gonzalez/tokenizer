@@ -3,13 +3,14 @@ require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-waffle");
 require('dotenv').config();
 
-const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
-const MNEMONIC = process.env.MNEMONIC || "";
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
+const INFURA_API_KEY = process.env.INFURA_API_KEY;
+const MNEMONIC = process.env.MNEMONIC;
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
+// Add some logging to help debug
+console.log("Infura API Key:", INFURA_API_KEY ? "Set ✓" : "Not set ✗");
+console.log("Mnemonic:", MNEMONIC ? "Set ✓" : "Not set ✗");
+
 module.exports = {
   solidity: {
     version: "0.8.20",
@@ -27,34 +28,22 @@ module.exports = {
     artifacts: "./artifacts"
   },
   networks: {
-    hardhat: {
-      chainId: 1337
-    },
-    development: {
-      url: "http://127.0.0.1:8545",
-      network_id: "*"
-    },
     sepolia: {
       url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
-      accounts: { mnemonic: MNEMONIC },
-      gas: 5500000,
-      gasPrice: "auto",
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true
-    },
-    mainnet: {
-      url: `https://mainnet.infura.io/v3/${INFURA_API_KEY}`,
-      accounts: { mnemonic: MNEMONIC },
-      gas: 5500000,
-      gasPrice: "auto",
-      confirmations: 2,
-      timeoutBlocks: 200
+      chainId: 11155111,
+      accounts: {
+        mnemonic: MNEMONIC,
+        path: "m/44'/60'/0'/0",
+        initialIndex: 0,
+        count: 20
+      },
+      gas: "auto",
+      gasPrice: "auto"
     }
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY
-  },
+  }, 
   mocha: {
     timeout: 40000
   }

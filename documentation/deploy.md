@@ -57,7 +57,7 @@ module.exports = {
 
 ### 1. Create Deployment Script
 
-One basic deployment script is already provided in **deploy/deploy.js**.
+One basic deployment script is already provided in **scripts/deploy.js**.
 
 ### 2. Compile Contracts
 
@@ -71,17 +71,17 @@ Choose the appropriate network for deployment:
 
 **Local Testing:**
 ```bash
-npx hardhat run deploy/deploy.js
+npx hardhat run scripts/deploy.js
 ```
 
 **Testnet (Sepolia):**
 ```bash
-npx hardhat run deploy/deploy.js --network sepolia
+npx hardhat run scripts/deploy.js --network sepolia
 ```
 
 **Mainnet:**
 ```bash
-npx hardhat run deploy/deploy.js --network mainnet
+npx hardhat run scripts/deploy.js --network mainnet
 ```
 
 ## Verification Steps
