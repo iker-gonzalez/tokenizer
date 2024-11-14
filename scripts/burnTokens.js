@@ -28,6 +28,8 @@ async function main() {
   const token = Token.attach(tokenAddress);
 
   console.log(`Burning tokens from ${recipientAddress} by ${burner.address}`);
+  console.log(`🌐 Token contract address: https://sepolia.etherscan.io/address/${token.address}`);
+
 
   // Call the burn function
   const tx = await token.burn(recipientAddress, amount);

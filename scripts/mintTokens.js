@@ -28,6 +28,7 @@ async function main() {
   const token = Token.attach(tokenAddress);
 
   console.log(`Minting tokens to ${recipientAddress} from ${minter.address}`);
+  console.log(`🌐 Token contract address: https://sepolia.etherscan.io/address/${token.address}`);
 
   // Call the mint function
   const tx = await token.mint(recipientAddress, amount);
