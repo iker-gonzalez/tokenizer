@@ -23,7 +23,7 @@ Create a `.env` file in your project root:
 
 ```plaintext
 MNEMONIC=your_mnemonic_sentence
-INFURA_PROJECT_ID=your_infura_project_id
+INFURA_API_KEY=your_infura_project_id
 ETHERSCAN_API_KEY=your_etherscan_api_key
 ```
 
