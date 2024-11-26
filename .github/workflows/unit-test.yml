@@ -28,5 +28,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set up environment variables
+        run: |
+          echo "INFURA_API_KEY=${{ secrets.INFURA_API_KEY }}" >> $GITHUB_ENV
+          echo "MNEMONIC=${{ secrets.MNEMONIC }}" >> $GITHUB_ENV
+
       - name: Run Hardhat tests
         run: npx hardhat test
+        env:
+          INFURA_API_KEY: ${{ secrets.INFURA_API_KEY }}
+          MNEMONIC: ${{ secrets.MNEMONIC }}
